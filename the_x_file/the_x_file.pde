@@ -16,7 +16,7 @@ void draw() {
   
 //  background(mapper1, mapper2, mapper3);
   background(mapper, 0, mapper2);
-  fill(redMap, greenMap, 0);
+
 pushMatrix();
   translate(x, 0);
   x += 1;
@@ -24,7 +24,8 @@ pushMatrix();
   if (x > width) {
     x = -70;
   }
-  
+
+  fill(redMap, greenMap, 0);
   rect(screen.width-(screen.width-10),screen.height-(screen.height-10), 20,5);
   rect(screen.width-(screen.width-15),screen.height-(screen.height-10), 5,20);
 
@@ -32,7 +33,7 @@ pushMatrix();
   rect(screen.width-(screen.width-35),screen.height-(screen.height-15), 20,5);
   rect(screen.width-(screen.width-55),screen.height-(screen.height-10), 5,20);
 popMatrix();
-  
+  fill(0, redMap, greenMap);  
   rect(mouseX-60,mouseY-10, 20,5);
   rect(mouseX-15,mouseY-10, 5,20);
 
