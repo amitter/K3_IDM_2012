@@ -15,20 +15,26 @@ void setup() {
   }
 
   timer=millis();
-  
-
 }
 
 void draw() {
   background(0);
   x=width-screen.width/5;
   y=0;
-//  y=millis()-timer % 1000;
-//  y0 = map(y, 0,1000, 0,height);
+  y0 = millis() % 1000;
+
+  image(a[0], x,y, digitX,digitY);    
+  image(a[0], x-digitX,y, digitX,digitY);    
+
+  // first digit
   for (int i=0; i<10; i++) {
-    if (time==i) image(a[i], x,y, digitX,digitY);
+    if (i < 10-1) {
+      if (time==i) image(a[i+1], x,y, digitX,digitY);
+    }
+    if (time==i) image(a[i], x,y0, digitX,digitY);
   }
 
+  // second digit
   for (int i=0; i<10; i++) {
     if (counter == i) {
         pushMatrix();
